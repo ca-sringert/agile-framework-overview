@@ -26,8 +26,8 @@
     }
 
     header p {
-      margin-top: 6px;
-      color: #555;
+      margin-top: 8px;
+      color: #666;
       font-size: 0.95rem;
     }
 
@@ -73,19 +73,14 @@
       transition: background 0.15s;
     }
 
-    tbody tr:last-child {
-      border-bottom: none;
-    }
-
-    tbody tr:hover {
-      background: #f8f9fc;
-    }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: #f8f9fc; }
 
     tbody td {
       padding: 14px 20px;
       font-size: 0.88rem;
       vertical-align: top;
-      line-height: 1.55;
+      line-height: 1.6;
       color: #2d2d2d;
     }
 
@@ -124,9 +119,10 @@
       color: #1a56c4;
     }
 
+    /* ELI-5 */
     .eli5 {
       max-width: 1100px;
-      margin: 48px auto 0;
+      margin: 56px auto 0;
     }
 
     .eli5 h2 {
@@ -147,13 +143,14 @@
       border-radius: 12px;
       padding: 24px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-      border-top: 4px solid #7c3aed;
     }
 
-    .eli5-icon {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-    }
+    .eli5-card.scrum   { border-top: 4px solid #1a56c4; }
+    .eli5-card.kanban  { border-top: 4px solid #1a7f4b; }
+    .eli5-card.shapeup { border-top: 4px solid #7c3aed; }
+    .eli5-card.success { border-top: 4px solid #e67e22; }
+
+    .eli5-icon { font-size: 1.8rem; margin-bottom: 10px; }
 
     .eli5-card h3 {
       font-size: 0.95rem;
@@ -165,11 +162,7 @@
     .eli5-card p {
       font-size: 0.87rem;
       color: #444;
-      line-height: 1.6;
-    }
-
-    .eli5-card:last-child {
-      border-top-color: #c0392b;
+      line-height: 1.65;
     }
   </style>
 </head>
@@ -177,6 +170,7 @@
 
 <header>
   <h1>Agile Framework Vergleich</h1>
+  <p>Überblick für eine fundierte Entscheidung · Stand April 2026</p>
 </header>
 
 <div class="table-wrapper">
@@ -186,7 +180,6 @@
         <th>Kriterium</th>
         <th>Scrum</th>
         <th class="highlight">Kanban</th>
-        <th>Scrumban</th>
         <th>Shape Up</th>
       </tr>
     </thead>
@@ -194,117 +187,79 @@
 
       <tr>
         <td>Planungsrhythmus</td>
-        <td>Fixer Sprint (1–4 Wochen)</td>
-        <td>Kontinuierlich, kein fixer Zyklus</td>
-        <td>Leichtes Weekly Planning, kein harter Sprint</td>
-        <td>6-Wochen-Cycles + 2 Wochen Cooldown</td>
+        <td>Fixer Sprint (1–4 Wochen) mit klarem Anfang und Ende</td>
+        <td>Kontinuierlicher Flow, keine fixen Zyklen</td>
+        <td>6-Wochen-Cycles mit eingebauter Pufferzeit</td>
       </tr>
 
       <tr>
         <td>Lieferrhythmus</td>
-        <td>Am Sprint-Ende (alle 2 Wochen)</td>
+        <td>Gebündelter Release am Sprint-Ende</td>
         <td><span class="badge badge-green">Sofort wenn fertig</span></td>
-        <td><span class="badge badge-green">Kontinuierlich möglich</span></td>
-        <td>Am Ende eines Cycles (alle 6 Wochen)</td>
+        <td>Vollständiges Inkrement am Cycle-Ende</td>
       </tr>
 
       <tr>
         <td>Time to Market</td>
-        <td><span class="badge badge-yellow">Mittel</span> – wartet auf Sprint-Ende</td>
+        <td><span class="badge badge-yellow">Mittel</span> – strukturierter Release-Rhythmus</td>
         <td><span class="badge badge-green">Sehr schnell</span> – Ship when done</td>
-        <td><span class="badge badge-green">Schnell</span> – kein Batch-Release nötig</td>
-        <td><span class="badge badge-red">Langsam</span> – maximal alle 6 Wochen</td>
+        <td><span class="badge badge-yellow">Planbar</span> – verlässliche Cycle-Kadenz</td>
       </tr>
 
       <tr>
         <td>Zeremonien / Overhead</td>
-        <td>Hoch: Planning, Daily, Review, Retro, Refinement</td>
-        <td><span class="badge badge-green">Minimal</span> – nur was ihr braucht</td>
-        <td>Gering – nur Weekly + Flow-Review</td>
-        <td>Mittel – Betting Table, Pitches, Cooldown</td>
+        <td>Klar strukturiert: Planning, Daily, Review, Retro, Refinement</td>
+        <td><span class="badge badge-green">Minimal</span> – nur was dem Team nutzt</td>
+        <td>Fokussiert: Betting Table, Pitches, Cooldown</td>
       </tr>
 
       <tr>
         <td>Eignung für Freelancer</td>
-        <td><span class="badge badge-red">Schwierig</span> – hohes Onboarding, Team-Commitments</td>
-        <td><span class="badge badge-green">Sehr gut</span> – klarer Flow, wenig Kontext nötig</td>
-        <td><span class="badge badge-green">Gut</span> – einfache Struktur, klares Board</td>
-        <td><span class="badge badge-yellow">Bedingt</span> – braucht Product-Kontext</td>
+        <td><span class="badge badge-yellow">Bedingt</span> – profitiert von Teamkontinuität</td>
+        <td><span class="badge badge-green">Sehr gut</span> – klarer Flow, schnelles Onboarding</td>
+        <td><span class="badge badge-yellow">Möglich</span> – mit gutem Product-Briefing</td>
       </tr>
 
       <tr>
         <td>Ticket-Anforderungen</td>
-        <td>User Stories mit Estimation</td>
-        <td><span class="badge badge-red">Sehr hoch</span> – Tickets müssen klein & klar sein</td>
-        <td><span class="badge badge-red">Hoch</span> – Definition of Ready nötig</td>
-        <td>Pitches (strukturierter Scope, kein Detail-Ticket)</td>
+        <td>User Stories mit Estimation und Akzeptanzkriterien</td>
+        <td>Kleine, klare Tickets mit Definition of Ready</td>
+        <td>Strukturierte Pitches statt Einzel-Tickets</td>
       </tr>
 
       <tr>
         <td>Strategische Planung (GF)</td>
-        <td>Über Product Backlog, quartalsweise</td>
-        <td>Über Backlog-Priorisierung, flexibel</td>
-        <td>Über Backlog-Priorisierung, flexibel</td>
-        <td><span class="badge badge-green">Sehr gut</span> – Appetite-Denken, klare Prioritäten pro Cycle</td>
+        <td>Über priorisiertes Product Backlog, quartalsweise</td>
+        <td>Flexibel über kontinuierliche Backlog-Pflege</td>
+        <td><span class="badge badge-green">Sehr stark</span> – Appetite-Denken & klare Cycle-Prios</td>
       </tr>
 
       <tr>
         <td>Einführungskomplexität</td>
-        <td><span class="badge badge-red">Hoch</span> – viele Rollen & Regeln</td>
-        <td><span class="badge badge-green">Niedrig</span> – einfach zu starten</td>
-        <td><span class="badge badge-green">Niedrig</span> – guter Übergang aus Scrum</td>
-        <td><span class="badge badge-yellow">Mittel</span> – neues Mindset nötig</td>
+        <td>Strukturiert – klare Rollen und Regeln als Orientierung</td>
+        <td><span class="badge badge-green">Niedrig</span> – schnell startbereit</td>
+        <td>Mittel – neues Mindset, lohnt sich aber</td>
       </tr>
 
       <tr>
         <td>Transparenz im Team</td>
-        <td>Mittel – Daily Scrum</td>
-        <td><span class="badge badge-green">Hoch</span> – Board zeigt alles live</td>
-        <td><span class="badge badge-green">Hoch</span> – Board + Weekly</td>
-        <td>Mittel – Pitches & Cycle-Status</td>
+        <td>Hoch – Daily Scrum & Sprint Board</td>
+        <td><span class="badge badge-green">Sehr hoch</span> – Board zeigt alles in Echtzeit</td>
+        <td>Hoch – Hill Charts & Cycle-Status</td>
       </tr>
 
       <tr>
         <td>Lernkultur / Verbesserung</td>
-        <td>Hoch – Retro eingebaut</td>
-        <td>Gering – muss explizit eingeführt werden</td>
-        <td>Mittel – kann optional eingeführt werden</td>
-        <td><span class="badge badge-green">Hoch</span> – Cooldown-Phase explizit dafür</td>
+        <td><span class="badge badge-green">Eingebaut</span> – Retrospektive nach jedem Sprint</td>
+        <td>Flexibel – nach Bedarf etablierbar</td>
+        <td><span class="badge badge-green">Eingebaut</span> – dedizierte Cooldown-Phase</td>
       </tr>
 
       <tr>
         <td>Tech Debt & Refactoring</td>
-        <td>Muss explizit geplant werden</td>
-        <td>Muss explizit priorisiert werden</td>
-        <td>Muss explizit priorisiert werden</td>
-        <td><span class="badge badge-green">Eingebaut</span> – Cooldown-Phase</td>
-      </tr>
-
-      <tr>
-        <td>Mandatory Ceremonies</td>
-        <td>
-          <strong>Sprint Planning</strong> – Team wählt Tasks für den Sprint aus und committet sich<br><br>
-          <strong>Daily Scrum</strong> – 15-Min tägliches Sync: Was gestern? Was heute? Blocker?<br><br>
-          <strong>Sprint Review</strong> – Fertige Features werden dem Stakeholder präsentiert<br><br>
-          <strong>Sprint Retrospective</strong> – Team reflektiert den Prozess und verbessert sich<br><br>
-          <strong>Backlog Refinement</strong> – PO & Team verfeinern & schätzen kommende Tickets
-        </td>
-        <td>
-          <span class="badge badge-green">Keine fixen Ceremonies</span><br><br>
-          <strong>Replenishment Meeting</strong> – Bei Bedarf: neue Tickets in "Ready" nachladen, wenn Kapazität frei ist<br><br>
-          <strong>Flow Review</strong> – Regelmäßiger Check: Was ist blockiert? Was fließt nicht?
-        </td>
-        <td>
-          <strong>Replenishment Meeting</strong> – Wöchentlich: neue Tickets in den Flow ziehen wenn WIP-Limit es erlaubt<br><br>
-          <strong>Flow Review / Weekly</strong> – Kurzes Team-Sync zu Blockern und Fortschritt<br><br>
-          <span class="badge badge-green">Kein Daily, kein Sprint Planning, keine Retro verpflichtend</span>
-        </td>
-        <td>
-          <strong>Pitch-Erstellung</strong> – PO schreibt strukturierten Pitch vor dem Cycle<br><br>
-          <strong>Betting Table</strong> – GF, Head of IT & POs entscheiden welche Pitches in den Cycle kommen<br><br>
-          <strong>Cycle Kickoff</strong> – Devs bekommen den Scope übergeben, starten selbstorganisiert<br><br>
-          <span class="badge badge-green">Kein Daily, keine Retro verpflichtend</span>
-        </td>
+        <td>Explizit planbar als eigene Backlog-Items</td>
+        <td>Jederzeit priorisierbar im Backlog</td>
+        <td><span class="badge badge-green">Strukturell verankert</span> – Cooldown-Phase</td>
       </tr>
 
       <tr>
@@ -324,12 +279,6 @@
           <span class="badge badge-green">Siemens</span>
         </td>
         <td>
-          <span class="badge badge-yellow">Riot Games</span>&nbsp;
-          <span class="badge badge-yellow">Mailchimp</span>&nbsp;
-          <span class="badge badge-yellow">Nokia</span>&nbsp;
-          <span class="badge badge-yellow">Softbank</span>
-        </td>
-        <td>
           <span class="badge badge-purple">Basecamp</span>&nbsp;
           <span class="badge badge-purple">Notion</span>&nbsp;
           <span class="badge badge-purple">Linear</span>&nbsp;
@@ -338,55 +287,146 @@
       </tr>
 
       <tr class="rec-row">
-        <td>Empfohlen wenn …</td>
-        <td>Stabiles, erfahrenes Team mit Scrum-Erfahrung</td>
-        <td>Schnelle Time-to-Market, Freelancer-Devs, klare Tickets</td>
-        <td>Übergang aus Scrum, leichte Struktur gewünscht</td>
-        <td>Starke Produktvision, GF-geführte Priorisierung, kein Feature-Chaos</td>
+        <td>Idealer Einsatz</td>
+        <td>Stabiles Team, das strukturiert und iterativ liefern möchte</td>
+        <td>Teams mit Fokus auf schnelle Lieferung und maximale Flexibilität</td>
+        <td>Produktorientierte Teams mit starker strategischer Führung</td>
       </tr>
 
     </tbody>
   </table>
 </div>
 
+
+<!-- ELI-5: SCRUM -->
 <section class="eli5">
-  <h2>💡 Shape Up — einfach erklärt (ELI-5)</h2>
+  <h2>💡 Scrum — kurz erklärt</h2>
   <div class="eli5-grid">
 
-    <div class="eli5-card">
+    <div class="eli5-card scrum">
+      <div class="eli5-icon">📦</div>
+      <h3>Der Sprint</h3>
+      <p>Scrum arbeitet in festen Zeitboxen — den <strong>Sprints</strong>. In der Regel 2 Wochen. Das Team committet sich zu einem klar definierten Set an Aufgaben und liefert am Ende ein fertiges, nutzbares Inkrement. Klare Struktur schafft Verlässlichkeit.</p>
+    </div>
+
+    <div class="eli5-card scrum">
+      <div class="eli5-icon">🗂️</div>
+      <h3>Product Backlog & Refinement</h3>
+      <p>Alle Anforderungen werden im <strong>Product Backlog</strong> gesammelt und vom PO priorisiert. Im gemeinsamen Refinement verfeinern PO und Devs die Tickets: Ist das Ziel klar? Welchen Umfang hat es? Was ist bewusst nicht enthalten?</p>
+    </div>
+
+    <div class="eli5-card scrum">
+      <div class="eli5-icon">📋</div>
+      <h3>Sprint Planning</h3>
+      <p>Zu Beginn jedes Sprints wählt das Team gemeinsam aus, was es in den nächsten 2 Wochen realistisch liefern kann. Dieses <strong>gemeinsame Commitment</strong> stärkt Verantwortung und schafft Planbarkeit für alle Stakeholder.</p>
+    </div>
+
+    <div class="eli5-card scrum">
+      <div class="eli5-icon">☀️</div>
+      <h3>Daily Scrum</h3>
+      <p>15 Minuten täglich: Was wurde erreicht? Was steht heute an? Gibt es Hindernisse? Kein Statusmeeting — sondern ein <em>kurzes Team-Sync</em>, das Zusammenarbeit und gegenseitige Unterstützung im Alltag fördert.</p>
+    </div>
+
+    <div class="eli5-card scrum">
+      <div class="eli5-icon">🔍</div>
+      <h3>Sprint Review & Retrospektive</h3>
+      <p>Am Sprint-Ende präsentiert das Team fertige Features (<strong>Review</strong>) und reflektiert anschließend intern den eigenen Prozess (<strong>Retro</strong>). Zwei Events, die kontinuierliche Verbesserung systematisch verankern.</p>
+    </div>
+
+    <div class="eli5-card success">
+      <div class="eli5-icon">🏆</div>
+      <h3>Erfolgsfaktoren</h3>
+      <p>Scrum entfaltet seinen vollen Wert mit einem <strong>eingespielten, stabilen Team</strong> und gelebten Zeremonien. Ein erfahrener Scrum Master in der Einführungsphase hilft, schnell in den Rhythmus zu kommen und häufige Stolpersteine zu vermeiden.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ELI-5: KANBAN -->
+<section class="eli5">
+  <h2>💡 Kanban — kurz erklärt</h2>
+  <div class="eli5-grid">
+
+    <div class="eli5-card kanban">
+      <div class="eli5-icon">🌊</div>
+      <h3>Kontinuierlicher Flow</h3>
+      <p>Kanban arbeitet ohne feste Zeitboxen. Aufgaben fließen kontinuierlich durch das System — ein fertiges Feature geht direkt live, ohne auf einen Sprint-Release zu warten. Das ist die Basis für echte <em>Ship when done</em>-Kultur.</p>
+    </div>
+
+    <div class="eli5-card kanban">
+      <div class="eli5-icon">🗃️</div>
+      <h3>Das Board</h3>
+      <p>Alle Arbeit ist im Board sichtbar: <strong>Backlog → Ready → In Progress → Review → Done</strong>. Vollständige Transparenz für alle Beteiligten — jederzeit und ohne Nachfragen. Das Board ist das einzige Steuerungsinstrument.</p>
+    </div>
+
+    <div class="eli5-card kanban">
+      <div class="eli5-icon">🚦</div>
+      <h3>WIP-Limits</h3>
+      <p><strong>Work In Progress Limits</strong> steuern, wie viele Aufgaben gleichzeitig aktiv sein dürfen. Das fokussiert das Team auf Fertigstellung statt auf paralleles Starten — und macht Engpässe sofort sichtbar, bevor sie zum Problem werden.</p>
+    </div>
+
+    <div class="eli5-card kanban">
+      <div class="eli5-icon">✅</div>
+      <h3>Definition of Ready</h3>
+      <p>Ein Ticket wechselt erst in "Ready", wenn es vollständig vorbereitet ist — klar beschrieben, ausreichend klein und mit messbaren Akzeptanzkriterien versehen. Das ist die <strong>gemeinsame Qualitätsbasis</strong> zwischen POs und Devs.</p>
+    </div>
+
+    <div class="eli5-card kanban">
+      <div class="eli5-icon">🔄</div>
+      <h3>Replenishment & Flow Review</h3>
+      <p>Sobald Kapazität frei wird, zieht das Team neue Tickets nach (<strong>Replenishment</strong>). Ein regelmäßiger Flow Review — z.B. wöchentlich — gibt POs und Team die Möglichkeit, Prioritäten anzupassen und Blockaden gemeinsam zu lösen.</p>
+    </div>
+
+    <div class="eli5-card success">
+      <div class="eli5-icon">🏆</div>
+      <h3>Erfolgsfaktoren</h3>
+      <p>Je klarer und kleiner Anforderungen geschnitten sind, desto schneller und zuverlässiger fließt die Lieferung. <strong>Ticket-Qualität und konsequente Priorisierung</strong> durch die POs sind der größte Hebel für messbar kürzere Time-to-Market.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ELI-5: SHAPE UP -->
+<section class="eli5">
+  <h2>💡 Shape Up — kurz erklärt</h2>
+  <div class="eli5-grid">
+
+    <div class="eli5-card shapeup">
       <div class="eli5-icon">🍕</div>
       <h3>Der Appetite</h3>
-      <p>Statt zu fragen <em>„Wie lange brauchen wir?"</em> fragt Shape Up: <em>„Wie viel Zeit wollen wir dafür ausgeben?"</em> — z.B. maximal 6 Wochen. Wenn es in der Zeit nicht fertig wird, wird es kleiner geschnitten, nicht die Zeit verlängert.</p>
+      <p>Shape Up dreht die Planungsfrage um: Statt <em>„Wie lange brauchen wir?"</em> lautet die Frage <em>„Wie viel ist uns das wert?"</em> — z.B. maximal 6 Wochen. Der Scope wird so zugeschnitten, dass er in diesen Rahmen passt. Zeit ist die Konstante, Scope die Variable.</p>
     </div>
 
-    <div class="eli5-card">
+    <div class="eli5-card shapeup">
       <div class="eli5-icon">📝</div>
       <h3>Der Pitch</h3>
-      <p>Ein PO schreibt keinen Sprint-Backlog, sondern einen kurzen <strong>Pitch</strong>: Was ist das Problem? Was ist die Lösung in groben Zügen? Was ist out of scope? Das reicht — die Devs lösen es selbst.</p>
+      <p>Statt detaillierter Ticket-Listen schreibt ein PO einen strukturierten <strong>Pitch</strong>: Was ist das Problem? Welche Lösung stellen wir uns grob vor? Was ist bewusst nicht enthalten? Der Rest liegt beim Team — das fördert Eigenverantwortung und kreative Lösungen.</p>
     </div>
 
-    <div class="eli5-card">
-      <div class="eli5-icon">🎰</div>
+    <div class="eli5-card shapeup">
+      <div class="eli5-icon">🎯</div>
       <h3>Der Betting Table</h3>
-      <p>Vor jedem Cycle sitzen GF, Head of IT und POs zusammen und <strong>wetten</strong> bewusst auf die besten Pitches. Was nicht ausgewählt wird, verschwindet — kein aufgeblähter Backlog, keine Leichen.</p>
+      <p>Vor jedem Cycle entscheiden GF, Head of IT und POs gemeinsam, welche Pitches umgesetzt werden. Diese bewusste <strong>strategische Priorisierung</strong> ersetzt einen aufgeblähten Backlog durch fokussierte, wertorientierte Entscheidungen.</p>
     </div>
 
-    <div class="eli5-card">
+    <div class="eli5-card shapeup">
       <div class="eli5-icon">⏳</div>
       <h3>6 Wochen Cycle + 2 Wochen Cooldown</h3>
-      <p>6 Wochen arbeiten die Devs ungestört an dem, was gewettet wurde. Danach 2 Wochen <strong>Cooldown</strong> — für Tech Debt, Bugfixes, Experimente. Kein Sprint-Hamsterrad.</p>
+      <p>6 Wochen konzentrierte Umsetzung — ohne Unterbrechungen. Danach 2 Wochen <strong>Cooldown</strong> für Tech Debt, Qualitätsverbesserungen und neue Ideen. Ein Rhythmus, der langfristig nachhaltige Produktentwicklung ermöglicht.</p>
     </div>
 
-    <div class="eli5-card">
-      <div class="eli5-icon">🚫</div>
-      <h3>Kein Micromanagement</h3>
-      <p>Es gibt keine täglichen Status-Updates, kein Ticket-Monitoring durch die POs. Das Team bekommt den Scope — und entscheidet selbst, wie es das umsetzt. Vertrauen ist Voraussetzung.</p>
+    <div class="eli5-card shapeup">
+      <div class="eli5-icon">🤝</div>
+      <h3>Vertrauen & Autonomie</h3>
+      <p>Das Team erhält den Scope und entscheidet eigenverantwortlich über die Umsetzung. Keine täglichen Status-Updates, kein Micro-Tracking. Dieses <strong>Vertrauen in das Team</strong> steigert Qualität, Motivation und Eigeninitiative nachweislich.</p>
     </div>
 
-    <div class="eli5-card">
-      <div class="eli5-icon">⚠️</div>
-      <h3>Wann es nicht passt</h3>
-      <p>Shape Up braucht reife POs, die gut pitchen können, und Devs die selbstorganisiert arbeiten. Mit frischen Freelancern und unklaren Features ist es <strong>verfrüht</strong> — erst Kanban etablieren, dann evaluieren.</p>
+    <div class="eli5-card success">
+      <div class="eli5-icon">🏆</div>
+      <h3>Erfolgsfaktoren</h3>
+      <p>Shape Up entfaltet sein volles Potential, wenn POs strukturiert pitchen und das Team selbstorganisiert arbeitet. Ein empfohlener Einstiegsweg: mit Kanban eine solide Lieferkultur aufbauen und Shape Up als nächsten strategischen Schritt einführen.</p>
     </div>
 
   </div>
