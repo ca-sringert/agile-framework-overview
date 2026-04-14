@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agile Framework Vergleich</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f5f6f8;
+      color: #1a1a2e;
+      padding: 40px 24px;
+    }
+
+    header {
+      max-width: 1100px;
+      margin: 0 auto 32px;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+
+    header p {
+      margin-top: 6px;
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    .table-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      overflow-x: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+    }
+
+    thead tr {
+      background: #1a1a2e;
+      color: #fff;
+    }
+
+    thead th {
+      padding: 16px 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-align: left;
+      letter-spacing: 0.03em;
+    }
+
+    thead th:first-child {
+      width: 200px;
+      color: #aab0c0;
+      font-weight: 500;
+    }
+
+    thead th.highlight {
+      background: #2f4f8f;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid #eef0f4;
+      transition: background 0.15s;
+    }
+
+    tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    tbody tr:hover {
+      background: #f8f9fc;
+    }
+
+    tbody td {
+      padding: 14px 20px;
+      font-size: 0.88rem;
+      vertical-align: top;
+      line-height: 1.55;
+      color: #2d2d2d;
+    }
+
+    tbody td:first-child {
+      font-weight: 600;
+      color: #555;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      background: #fafbfc;
+      border-right: 1px solid #eef0f4;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .badge-green  { background: #e6f9f0; color: #1a7f4b; }
+    .badge-yellow { background: #fff8e1; color: #a07000; }
+    .badge-red    { background: #fde8e8; color: #c0392b; }
+    .badge-blue   { background: #e8f0fe; color: #1a56c4; }
+    .badge-purple { background: #f3e8fe; color: #7c3aed; }
+
+    .rec-row td {
+      background: #f0f4ff !important;
+      font-weight: 500;
+    }
+
+    .rec-row td:first-child {
+      background: #e4ecff !important;
+      color: #1a56c4;
+    }
+
+    footer {
+      max-width: 1100px;
+      margin: 24px auto 0;
+      font-size: 0.8rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Agile Framework Vergleich</h1>
+  <p>Entscheidungsgrundlage für GF, Head of IT & Product Owners · Stand April 2026</p>
+</header>
+
+<div class="table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Kriterium</th>
+        <th>Scrum</th>
+        <th class="highlight">Kanban</th>
+        <th>Scrumban</th>
+        <th>Shape Up</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td>Planungsrhythmus</td>
+        <td>Fixer Sprint (1–4 Wochen)</td>
+        <td>Kontinuierlich, kein fixer Zyklus</td>
+        <td>Leichtes Weekly Planning, kein harter Sprint</td>
+        <td>6-Wochen-Cycles + 2 Wochen Cooldown</td>
+      </tr>
+
+      <tr>
+        <td>Lieferrhythmus</td>
+        <td>Am Sprint-Ende (alle 2 Wochen)</td>
+        <td><span class="badge badge-green">Sofort wenn fertig</span></td>
+        <td><span class="badge badge-green">Kontinuierlich möglich</span></td>
+        <td>Am Ende eines Cycles (alle 6 Wochen)</td>
+      </tr>
+
+      <tr>
+        <td>Time to Market</td>
+        <td><span class="badge badge-yellow">Mittel</span> – wartet auf Sprint-Ende</td>
+        <td><span class="badge badge-green">Sehr schnell</span> – Ship when done</td>
+        <td><span class="badge badge-green">Schnell</span> – kein Batch-Release nötig</td>
+        <td><span class="badge badge-red">Langsam</span> – maximal alle 6 Wochen</td>
+      </tr>
+
+      <tr>
+        <td>Zeremonien / Overhead</td>
+        <td>Hoch: Planning, Daily, Review, Retro, Refinement</td>
+        <td><span class="badge badge-green">Minimal</span> – nur was ihr braucht</td>
+        <td>Gering – nur Weekly + Flow-Review</td>
+        <td>Mittel – Betting Table, Pitches, Cooldown</td>
+      </tr>
+
+      <tr>
+        <td>Eignung für Freelancer</td>
+        <td><span class="badge badge-red">Schwierig</span> – hohes Onboarding, Team-Commitments</td>
+        <td><span class="badge badge-green">Sehr gut</span> – klarer Flow, wenig Kontext nötig</td>
+        <td><span class="badge badge-green">Gut</span> – einfache Struktur, klares Board</td>
+        <td><span class="badge badge-yellow">Bedingt</span> – braucht Product-Kontext</td>
+      </tr>
+
+      <tr>
+        <td>Ticket-Anforderungen</td>
+        <td>User Stories mit Estimation</td>
+        <td><span class="badge badge-red">Sehr hoch</span> – Tickets müssen klein & klar sein</td>
+        <td><span class="badge badge-red">Hoch</span> – Definition of Ready nötig</td>
+        <td>Pitches (strukturierter Scope, kein Detail-Ticket)</td>
+      </tr>
+
+      <tr>
+        <td>Strategische Planung (GF)</td>
+        <td>Über Product Backlog, quartalsweise</td>
+        <td>Über Backlog-Priorisierung, flexibel</td>
+        <td>Über Backlog-Priorisierung, flexibel</td>
+        <td><span class="badge badge-green">Sehr gut</span> – Appetite-Denken, klare Prioritäten pro Cycle</td>
+      </tr>
+
+      <tr>
+        <td>Einführungskomplexität</td>
+        <td><span class="badge badge-red">Hoch</span> – viele Rollen & Regeln</td>
+        <td><span class="badge badge-green">Niedrig</span> – einfach zu starten</td>
+        <td><span class="badge badge-green">Niedrig</span> – guter Übergang aus Scrum</td>
+        <td><span class="badge badge-yellow">Mittel</span> – neues Mindset nötig</td>
+      </tr>
+
+      <tr>
+        <td>Transparenz im Team</td>
+        <td>Mittel – Daily Scrum</td>
+        <td><span class="badge badge-green">Hoch</span> – Board zeigt alles live</td>
+        <td><span class="badge badge-green">Hoch</span> – Board + Weekly</td>
+        <td>Mittel – Pitches & Cycle-Status</td>
+      </tr>
+
+      <tr>
+        <td>Lernkultur / Verbesserung</td>
+        <td>Hoch – Retro eingebaut</td>
+        <td>Gering – muss explizit eingeführt werden</td>
+        <td>Mittel – kann optional eingeführt werden</td>
+        <td><span class="badge badge-green">Hoch</span> – Cooldown-Phase explizit dafür</td>
+      </tr>
+
+      <tr>
+        <td>Tech Debt & Refactoring</td>
+        <td>Muss explizit geplant werden</td>
+        <td>Muss explizit priorisiert werden</td>
+        <td>Muss explizit priorisiert werden</td>
+        <td><span class="badge badge-green">Eingebaut</span> – Cooldown-Phase</td>
+      </tr>
+
+      <tr>
+        <td>Bekannte Nutzer</td>
+        <td>
+          <span class="badge badge-blue">Microsoft</span>&nbsp;
+          <span class="badge badge-blue">IBM</span>&nbsp;
+          <span class="badge badge-blue">SAP</span>&nbsp;
+          <span class="badge badge-blue">Salesforce</span>&nbsp;
+          <span class="badge badge-blue">Amazon</span>
+        </td>
+        <td>
+          <span class="badge badge-green">Spotify</span>&nbsp;
+          <span class="badge badge-green">Microsoft</span>&nbsp;
+          <span class="badge badge-green">Zara</span>&nbsp;
+          <span class="badge badge-green">Toyota</span>&nbsp;
+          <span class="badge badge-green">Siemens</span>
+        </td>
+        <td>
+          <span class="badge badge-yellow">Riot Games</span>&nbsp;
+          <span class="badge badge-yellow">Mailchimp</span>&nbsp;
+          <span class="badge badge-yellow">Nokia</span>&nbsp;
+          <span class="badge badge-yellow">Softbank</span>
+        </td>
+        <td>
+          <span class="badge badge-purple">Basecamp</span>&nbsp;
+          <span class="badge badge-purple">Notion</span>&nbsp;
+          <span class="badge badge-purple">Linear</span>&nbsp;
+          <span class="badge badge-purple">GitLab</span>
+        </td>
+      </tr>
+
+      <tr class="rec-row">
+        <td>Empfohlen wenn …</td>
+        <td>Stabiles, erfahrenes Team mit Scrum-Erfahrung</td>
+        <td>Schnelle Time-to-Market, Freelancer-Devs, klare Tickets</td>
+        <td>Übergang aus Scrum, leichte Struktur gewünscht</td>
+        <td>Starke Produktvision, GF-geführte Priorisierung, kein Feature-Chaos</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<footer>
+  Erstellt als Entscheidungsgrundlage · Euer aktueller Kontext: Freelancer-Devs, PO-getriebener Change, ClickUp, schnelle Time-to-Market als Ziel
+</footer>
+
+</body>
+</html>
