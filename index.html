@@ -124,11 +124,52 @@
       color: #1a56c4;
     }
 
-    footer {
+    .eli5 {
       max-width: 1100px;
-      margin: 24px auto 0;
-      font-size: 0.8rem;
-      color: #999;
+      margin: 48px auto 0;
+    }
+
+    .eli5 h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 20px;
+    }
+
+    .eli5-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+    }
+
+    .eli5-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      border-top: 4px solid #7c3aed;
+    }
+
+    .eli5-icon {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .eli5-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 8px;
+    }
+
+    .eli5-card p {
+      font-size: 0.87rem;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .eli5-card:last-child {
+      border-top-color: #c0392b;
     }
   </style>
 </head>
@@ -136,7 +177,6 @@
 
 <header>
   <h1>Agile Framework Vergleich</h1>
-  <p>Entscheidungsgrundlage für GF, Head of IT & Product Owners · Stand April 2026</p>
 </header>
 
 <div class="table-wrapper">
@@ -282,9 +322,48 @@
   </table>
 </div>
 
-<footer>
-  Erstellt als Entscheidungsgrundlage · Euer aktueller Kontext: Freelancer-Devs, PO-getriebener Change, ClickUp, schnelle Time-to-Market als Ziel
-</footer>
+<section class="eli5">
+  <h2>💡 Shape Up — einfach erklärt (ELI-5)</h2>
+  <div class="eli5-grid">
+
+    <div class="eli5-card">
+      <div class="eli5-icon">🍕</div>
+      <h3>Der Appetite</h3>
+      <p>Statt zu fragen <em>„Wie lange brauchen wir?"</em> fragt Shape Up: <em>„Wie viel Zeit wollen wir dafür ausgeben?"</em> — z.B. maximal 6 Wochen. Wenn es in der Zeit nicht fertig wird, wird es kleiner geschnitten, nicht die Zeit verlängert.</p>
+    </div>
+
+    <div class="eli5-card">
+      <div class="eli5-icon">📝</div>
+      <h3>Der Pitch</h3>
+      <p>Ein PO schreibt keinen Sprint-Backlog, sondern einen kurzen <strong>Pitch</strong>: Was ist das Problem? Was ist die Lösung in groben Zügen? Was ist out of scope? Das reicht — die Devs lösen es selbst.</p>
+    </div>
+
+    <div class="eli5-card">
+      <div class="eli5-icon">🎰</div>
+      <h3>Der Betting Table</h3>
+      <p>Vor jedem Cycle sitzen GF, Head of IT und POs zusammen und <strong>wetten</strong> bewusst auf die besten Pitches. Was nicht ausgewählt wird, verschwindet — kein aufgeblähter Backlog, keine Leichen.</p>
+    </div>
+
+    <div class="eli5-card">
+      <div class="eli5-icon">⏳</div>
+      <h3>6 Wochen Cycle + 2 Wochen Cooldown</h3>
+      <p>6 Wochen arbeiten die Devs ungestört an dem, was gewettet wurde. Danach 2 Wochen <strong>Cooldown</strong> — für Tech Debt, Bugfixes, Experimente. Kein Sprint-Hamsterrad.</p>
+    </div>
+
+    <div class="eli5-card">
+      <div class="eli5-icon">🚫</div>
+      <h3>Kein Micromanagement</h3>
+      <p>Es gibt keine täglichen Status-Updates, kein Ticket-Monitoring durch die POs. Das Team bekommt den Scope — und entscheidet selbst, wie es das umsetzt. Vertrauen ist Voraussetzung.</p>
+    </div>
+
+    <div class="eli5-card">
+      <div class="eli5-icon">⚠️</div>
+      <h3>Wann es nicht passt</h3>
+      <p>Shape Up braucht reife POs, die gut pitchen können, und Devs die selbstorganisiert arbeiten. Mit frischen Freelancern und unklaren Features ist es <strong>verfrüht</strong> — erst Kanban etablieren, dann evaluieren.</p>
+    </div>
+
+  </div>
+</section>
 
 </body>
 </html>
